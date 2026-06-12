@@ -1,0 +1,37 @@
+digraph{
+
+# Graph style
+"ordering"="out"
+"rankdir"="TD"
+
+#########
+# Nodes #
+#########
+
+"Add(Integer(1), Mul(Integer(-1), Symbol('x')), Mul(Pow(Symbol('y'), Integer(-1)), sin(Symbol('x'))))_()" ["color"="black", "label"="Add", "shape"="ellipse"];
+"Integer(1)_(0,)" ["color"="black", "label"="1", "shape"="ellipse"];
+"Mul(Integer(-1), Symbol('x'))_(1,)" ["color"="black", "label"="Mul", "shape"="ellipse"];
+"Integer(-1)_(1, 0)" ["color"="black", "label"="-1", "shape"="ellipse"];
+"Symbol('x')_(1, 1)" ["color"="black", "label"="x", "shape"="ellipse"];
+"Mul(Pow(Symbol('y'), Integer(-1)), sin(Symbol('x')))_(2,)" ["color"="black", "label"="Mul", "shape"="ellipse"];
+"Pow(Symbol('y'), Integer(-1))_(2, 0)" ["color"="black", "label"="Pow", "shape"="ellipse"];
+"Symbol('y')_(2, 0, 0)" ["color"="black", "label"="y", "shape"="ellipse"];
+"Integer(-1)_(2, 0, 1)" ["color"="black", "label"="-1", "shape"="ellipse"];
+"sin(Symbol('x'))_(2, 1)" ["color"="black", "label"="sin", "shape"="ellipse"];
+"Symbol('x')_(2, 1, 0)" ["color"="black", "label"="x", "shape"="ellipse"];
+
+#########
+# Edges #
+#########
+
+"Add(Integer(1), Mul(Integer(-1), Symbol('x')), Mul(Pow(Symbol('y'), Integer(-1)), sin(Symbol('x'))))_()" -> "Integer(1)_(0,)";
+"Add(Integer(1), Mul(Integer(-1), Symbol('x')), Mul(Pow(Symbol('y'), Integer(-1)), sin(Symbol('x'))))_()" -> "Mul(Integer(-1), Symbol('x'))_(1,)";
+"Add(Integer(1), Mul(Integer(-1), Symbol('x')), Mul(Pow(Symbol('y'), Integer(-1)), sin(Symbol('x'))))_()" -> "Mul(Pow(Symbol('y'), Integer(-1)), sin(Symbol('x')))_(2,)";
+"Mul(Integer(-1), Symbol('x'))_(1,)" -> "Integer(-1)_(1, 0)";
+"Mul(Integer(-1), Symbol('x'))_(1,)" -> "Symbol('x')_(1, 1)";
+"Mul(Pow(Symbol('y'), Integer(-1)), sin(Symbol('x')))_(2,)" -> "Pow(Symbol('y'), Integer(-1))_(2, 0)";
+"Mul(Pow(Symbol('y'), Integer(-1)), sin(Symbol('x')))_(2,)" -> "sin(Symbol('x'))_(2, 1)";
+"Pow(Symbol('y'), Integer(-1))_(2, 0)" -> "Symbol('y')_(2, 0, 0)";
+"Pow(Symbol('y'), Integer(-1))_(2, 0)" -> "Integer(-1)_(2, 0, 1)";
+"sin(Symbol('x'))_(2, 1)" -> "Symbol('x')_(2, 1, 0)";
+}
